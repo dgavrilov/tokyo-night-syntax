@@ -1,7 +1,8 @@
 {
-  "version": "1.0.0",
-  "name": "default-dark-syntax",
-  "description": "Default dark syntax theme",
+  "version": "0.9.0",
+  "name": "tokyo-night-syntax",
+  "description": "Tokyo Night syntax theme",
+  "repository": "https://github.com/dgavrilov/tokyo-night-syntax",
   "theme": "syntax",
   "scripts": {
     "build": "lessc styles/less/default.less ./styles/index.css"

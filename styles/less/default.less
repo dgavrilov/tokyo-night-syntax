@@ -1,173 +1,217 @@
-@import "./colors";
-
 .editor {
-
-  .CodeMirror {
-    // Background color of main window
-    background-color: @base00;
-  }
-  .CodeMirror-scroll, .CodeMirror-dialog {
-    // Color of otherwise un-styled text
-    color: @base01;
-  }
-  .CodeMirror-gutters {
-    // Gutter to the left
-    background-color: transparent;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-  }
   .CodeMirror-linenumber {
-    // Line numbers in the gutter
-    color: @base06;
-  }
-  .CodeMirror-selected {
-    // Highlighed text
-    background-color: @base06;
-  }
-  .CodeMirror-focused .CodeMirror-selected {
-    // Highlighed text
-    background-color: @base07;
-  }
-  .CodeMirror-cursor {
-    // The cursor
-    border-left: 1px solid @base06;
-  }
-  .CodeMirror-matchingbracket,
-  .CodeMirror-matchingtag {
-    // When you click a tag/bracket and the matching one is highlighted
-    background: @base02 !important;
-    color: @base06 !important;
-    border-bottom: 1px solid @base08 !important;
-  }
-  .CodeMirror-foldgutter-open:after {
-    // Those little arrows in the gutter
-    color: @base03;
-  }
-  .CodeMirror-foldgutter-folded:after {
-    // The arrows after you collapse code
-    color: @base04;
-  }
-  .CodeMirror.over-gutter,
-  .CodeMirror-activeline {
-    .CodeMirror-foldgutter-open:after {
-      // Arrows when hovering on the gutter
-      color: @base06;
-    }
-  }
-  .CodeMirror-foldmarker {
-    // The [...] marking collapsed code
-    border-color: @base06;
-    background-color: @base06;
-    color: @base02;
-  }
-  .CodeMirror .CodeMirror-linewidget img.inline-widget {
-    background: rgba(0,0,0,0.1);
-  }
-  .cm-searching {
-    // Ctrl + F results
-    background-color: rgba(165, 69, 67, .4);
-    color: white !important;
+    color: #363b54;
   }
 
-  /* All 'dem swatches */
+  .CodeMirror-gutters {
+    background-color: #1a1b26;
+    border-right-color: #1a1b26;
+  }
+
+  .CodeMirror-cursor {
+    border-left: 2px solid #c0caf5;
+  }
+
+  .CodeMirror-selected {
+    background-color: rgba(81, 92, 126, 0.14);
+  }
+
+  .CodeMirror-focused .CodeMirror-selected {
+    background-color: rgba(81, 92, 126, 0.3);
+  }
+
+  .CodeMirror-activeline-background {
+    background-color: #1e202e;
+  }
+
+  .CodeMirror-activeline-gutter {
+    .CodeMirror-linenumber {
+      color: #737aa2;
+    }
+  }
+
+  .CodeMirror-scroll {
+    color: #9aa5ce;
+  }
 
   .CodeMirror {
-    .cm-url {
-      color: @base0F;
+    color: #9aa5ce;
+    background-color: #1a1b26;
+
+    .header {
+      color: #747ca1;
+
+      &.header-1 {
+        color: #89ddff;
+      }
+
+      &.header-2 {
+        color: #61bdf2;
+      }
+
+      &.header-3 {
+        color: #7aa2f7;
+      }
+
+      &.header-4 {
+        color: #6d91de;
+      }
+
+      &.header-5 {
+        color: #9aa5ce;
+      }
     }
-    .cm-atom,
-    .cm-formatting-list.cm-variable-3,
-    .cm-string,
-    .cm-string-2,
-    .cm-hr {
-      color: @base0B;
+
+    .cm-em, .cm-strong {
+      color: #c0caf5;
     }
-    .cm-number,
-    .cm-attribute,
-    .cm-plus {
-      color: @base0A;
+
+    .cm-formatting-strikethrough {
+      color: #89ddff;
     }
-    .cm-def,
-    .cm-property {
-      color: @base0C;
+
+    .cm-formatting-list {
+      color: #89ddff;
     }
-    .cm-variable {
-      color: @base06;
+
+    .cm-link, .cm-url, .cm-string {
+      color: #73daca;
     }
-    .cm-keyword,
-    .cm-formatting-list.cm-variable-2,
-    .cm-operator,
-    .cm-meta,
-    .cm-bracket {
-      color: @base0E;
-    }
-    .cm-comment {
-      color: @base06;
-      font-style: italic;
-    }
-    .cm-error,
-    .cm-minus {
-      color: @base09;
-    }
-    .cm-formatting-header {
-      opacity: 0.3;
-    }
-    .cm-header {
-      color: @base01;
-    }
+
     .cm-link {
-      color: @base0F;
       text-underline-position: under;
     }
-    .cm-rangeinfo {
-      color: @base0C;
-    }
-    .cm-builtin {
-      color: @base0F;
-    }
-    .cm-qualifier,
-    .cm-tag {
-      color: @base0A;
-    }
-    .cm-quote {
-      color: @base0E;
-      font-style: italic;
-    }
-    .cm-whitespace::before {
-      color: @base06;
-      opacity: 0.4;
-    }
-    .cm-formatting-quote, .cm-formatting-strong, .cm-formatting-em {
-      opacity: 0.6;
-    }
-    .cm-strong {
-      color: @base0A;
-    }
-    .cm-em {
-      color: @base0D;
+
+    .cm-formatting-link, .cm-formatting-link-string {
+      color: #89ddff !important;
+      text-decoration: none;
     }
 
-    // carriage return
-    .CodeMirror-code > div > pre > span::after, .CodeMirror-line > span::after {
-      color: @base06;
-      opacity: 0.4;
+    .cm-formatting-link-string {
+      &.cm-link-footref2 {
+        color: #ff9e64 !important;
+      }
+    }
+
+    .cm-image-marker {
+      color: #89ddff;
+    }
+
+    .cm-formatting-image {
+      color: #89ddff;
     }
 
     .cm-inline-code {
-      background: rgba(0, 0, 0, 0.1);
-      color: @base03;
+      color: #89ddff;
+      background-color: #16161e;
     }
 
     .gfm-codeblock-bg.CodeMirror-linebackground {
-      background: rgba(0, 0, 0, 0.1);
+      background-color: #16161e;
     }
 
-    .cm-table-sep, .table-row.table-row-1 {
-      color: @base0E;
-    }
-  }
+    .gfm-codeblock {
+      color: #89ddff;
 
-  /* Active Line Highlight support */
-  .CodeMirror-activeline-background, .CodeMirror-activeline-gutter {
-    background-color: fade(@base02, 10%) !important;
+      .cm-formatting-code-block {
+        color: #89ddff;
+      }
+
+      .cm-keyword {
+        color: #9d7cd8;
+      }
+
+      .cm-def {
+        color: #bb9af7;
+      }
+
+      .cm-string {
+        color: #9ece6a;
+      }
+
+      .cm-variable {
+        color: #7aa2f7;
+      }
+
+      .cm-builtin {
+        color: #0db9d7;
+      }
+
+      .cm-operator {
+        color: #bb9af7;
+      }
+
+      .cm-number, .cm-atom {
+        color: #ff9e64;
+      }
+
+      .cm-property {
+        color: #0db9d7;
+      }
+    }
+
+    .table-row {
+      color: #c0cefc;
+
+      .cm-table-sep {
+        color: #89ddff;
+      }
+
+      &.table-row-1 {
+        color: #89ddff;
+      }
+    }
+
+    .cm-formatting-quote {
+      color: #89ddff;
+    }
+
+    .cm-hr {
+      color: #51597d;
+    }
+
+    .cm-bracket {
+      color: #ba3c97 !important;
+    }
+
+    .cm-tag {
+      color: #f7768e;
+    }
+
+    .cm-quote {
+      color: #c0cefc;
+      font-style: italic;
+    }
+
+    .cm-property {
+      color: #7aa2f7;
+    }
+
+    .cm-callee {
+      color: #0db9d7;
+    }
+
+    .cm-number {
+      color: #ff9e64;
+    }
+
+    .cm-keyword {
+      color: #bb9af7;
+    }
+
+    .cm-searching {
+      background-color: rgba(61, 89, 161, 0.26);
+      border-bottom: 1px solid #ba3c97 !important;
+    }
+
+    .cm-formatting-quote, .cm-formatting-strong, .cm-formatting-em {
+      opacity: 0.8;
+    }
+
+    .CodeMirror-matchingbracket, .CodeMirror-matchingtag {
+      color: #9ece6a;
+      background-color: #1a1b26 !important;
+      border-bottom: 1px solid #9ece6a !important;
+    }
   }
 }
