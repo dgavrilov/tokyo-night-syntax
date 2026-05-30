@@ -1,20 +1,20 @@
 .editor {
   --base00: transparent;
-  --base01: hsl(0 0% 87%);
-  --base02: hsl(219 100% 86%);
-  --base03: hsl(0 0% 69%);
-  --base04: hsl(0 0% 82%);
-  --base05: hsl(0 0% 88%);
-  --base06: hsl(0 0% 50%);
-  --base07: hsl(0 0% 0%);
-  --base08: hsl(1 42% 45%);
-  --base09: hsl(20 97% 56%);
-  --base0A: hsl(34 98% 59%);
-  --base0B: hsl(172 29% 64%);
-  --base0C: hsl(66 39% 57%);
-  --base0D: hsl(199 52% 63%);
-  --base0E: hsl(300 33% 70%);
-  --base0F: hsl(214 30% 55%);
+  --base01: #a9b1d6;
+  --base02: #3d59a1;
+  --base03: #51597d;
+  --base04: #9aa5ce;
+  --base05: #c0caf5;
+  --base06: #363b54;
+  --base07: rgba(81, 92, 126, 0.3);
+  --base08: #f7768e;
+  --base09: #ff9e64;
+  --base0A: #ff9e64;
+  --base0B: #73daca;
+  --base0C: #89ddff;
+  --base0D: #7aa2f7;
+  --base0E: #bb9af7;
+  --base0F: #73daca;
 
   .CodeMirror {
     /* Background color of main window */
@@ -36,23 +36,22 @@
       color: var(--base06);
     }
     .CodeMirror-selected {
-      /* Highlighed text */
+      /* Highlighted text */
       background-color: color-mix(in srgb, var(--base06), transparent 80%);
     }
     .CodeMirror-focused .CodeMirror-selected {
-      /* Highlighed text */
+      /* Highlighted text when focused */
       background-color: var(--base07);
     }
     .CodeMirror-cursor {
       /* The cursor */
-      border-left: 1px solid var(--base06);
+      border-left: 2px solid var(--base05);
     }
     .CodeMirror-matchingbracket,
     .CodeMirror-matchingtag {
       /* When you click a tag/bracket and the matching one is highlighted */
-      background: var(--base02) !important;
-      color: var(--base06) !important;
-      border-bottom: 1px solid var(--base08) !important;
+      background: #16161e !important;
+      border-bottom: 1px solid #42465d !important;
     }
     .CodeMirror-foldgutter-open:after {
       /* Those little arrows in the gutter */
@@ -80,8 +79,11 @@
     }
     .cm-searching {
       /* Ctrl + F results */
-      background-color: rgba(165, 69, 67, 0.4);
-      color: white !important;
+      background-color: rgba(61, 89, 161, 0.26);
+      border-bottom: 1px solid #ba3c97 !important;
+    }
+    .CodeMirror-activeline-gutter .CodeMirror-linenumber {
+      color: #787c99;
     }
   }
 
@@ -92,40 +94,54 @@
     color-scheme: dark;
 
     .cm-quote {
-      color: var(--base0E);
+      color: #c0cefc;
       font-style: italic;
     }
     .cm-url {
       color: var(--base0F);
     }
-    .cm-atom,
-    .cm-formatting-list.cm-variable-3,
+    .cm-atom {
+      color: var(--base0A);
+    }
     .cm-string,
-    .cm-string-2,
-    .cm-hr {
+    .cm-string-2 {
       color: var(--base0B);
+    }
+    .cm-hr {
+      color: #51597d;
+    }
+    .cm-formatting-list {
+      color: var(--base0C);
     }
     .cm-number,
     .cm-attribute,
     .cm-plus {
       color: var(--base0A);
     }
-    .cm-def,
-    .cm-property {
+    .cm-def {
       color: var(--base0C);
     }
+    .cm-property {
+      color: var(--base0D);
+    }
+    .cm-callee {
+      color: #0db9d7;
+    }
     .cm-variable {
-      color: var(--base06);
+      color: var(--base05);
     }
     .cm-keyword,
-    .cm-formatting-list.cm-variable-2,
-    .cm-operator,
-    .cm-meta,
-    .cm-bracket {
+    .cm-meta {
       color: var(--base0E);
     }
+    .cm-operator {
+      color: var(--base0C);
+    }
+    .cm-bracket {
+      color: #ba3c97 !important;
+    }
     .cm-comment {
-      color: var(--base06);
+      color: var(--base03);
       font-style: italic;
     }
     .cm-error,
@@ -136,7 +152,7 @@
       opacity: 0.3;
     }
     .cm-header {
-      color: var(--base01);
+      color: var(--base05);
     }
     .cm-link {
       color: var(--base0F);
@@ -150,7 +166,7 @@
     }
     .cm-qualifier,
     .cm-tag {
-      color: var(--base0A);
+      color: var(--base08);
     }
     .cm-whitespace::before {
       color: var(--base06);
@@ -159,13 +175,26 @@
     .cm-formatting-quote,
     .cm-formatting-strong,
     .cm-formatting-em {
-      opacity: 0.6;
+      opacity: 0.8;
     }
-    .cm-strong {
-      color: var(--base0A);
-    }
+    .cm-strong,
     .cm-em {
-      color: var(--base0D);
+      color: var(--base05);
+    }
+    .cm-formatting-strikethrough {
+      color: var(--base0C);
+    }
+    .cm-formatting-link,
+    .cm-formatting-link-string {
+      color: var(--base0C) !important;
+      text-decoration: none;
+    }
+    .cm-formatting-link-string.cm-link-footref2 {
+      color: var(--base0A) !important;
+    }
+    .cm-image-marker,
+    .cm-formatting-image {
+      color: var(--base0C);
     }
 
     /* carriage return */
@@ -176,17 +205,53 @@
     }
 
     .cm-inline-code {
-      background: rgba(0, 0, 0, 0.1);
-      color: var(--base03);
+      background: #16161e;
+      color: var(--base0C);
     }
 
     .gfm-codeblock-bg.CodeMirror-linebackground {
-      background: rgba(0, 0, 0, 0.1);
+      background: #16161e;
+    }
+
+    .gfm-codeblock {
+      color: var(--base0C);
+
+      .cm-formatting-code-block {
+        color: var(--base0C);
+      }
+      .cm-keyword {
+        color: var(--base0E);
+      }
+      .cm-def {
+        color: var(--base0D);
+      }
+      .cm-string {
+        color: #9ece6a;
+      }
+      .cm-variable {
+        color: var(--base0D);
+      }
+      .cm-builtin {
+        color: #0db9d7;
+      }
+      .cm-operator {
+        color: var(--base0C);
+      }
+      .cm-number,
+      .cm-atom {
+        color: var(--base0A);
+      }
+      .cm-property {
+        color: #0db9d7;
+      }
     }
 
     .cm-table-sep,
     .table-row.table-row-1 {
-      color: var(--base0E);
+      color: var(--base0C);
+    }
+    .table-row {
+      color: #c0cefc;
     }
 
     .cm-quote.cm-link-barelink {
@@ -198,10 +263,27 @@
   /* Active Line Highlight support */
   .CodeMirror-activeline-background,
   .CodeMirror-activeline-gutter {
-    background-color: color-mix(
-      in srgb,
-      var(--base02),
-      transparent 90%
-    ) !important;
+    background-color: #1e202e !important;
+  }
+
+  /* Inkdrop-specific header levels */
+  .CodeMirror .header {
+    color: #747ca1;
+
+    &.header-1 {
+      color: var(--base0C);
+    }
+    &.header-2 {
+      color: #61bdf2;
+    }
+    &.header-3 {
+      color: var(--base0D);
+    }
+    &.header-4 {
+      color: #6d91de;
+    }
+    &.header-5 {
+      color: var(--base01);
+    }
   }
 }
